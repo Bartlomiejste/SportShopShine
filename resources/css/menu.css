@@ -1,0 +1,30 @@
+.center {
+    background-color: #fff;
+    height: 100%;
+    width: 65%;
+    padding: 0px;
+}
+
+.icon {
+    cursor: pointer;
+    transition: .3s linear;
+}
+
+.icon:hover {
+    color: #1D6EFD;
+}
+
+
+.menu-container {
+    display: flex;
+    background: green;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.info-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

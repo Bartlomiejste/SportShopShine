@@ -1,24 +1,6 @@
-*,
-html {
-    margin: 0;
-    padding: 0;
+* {
+    margin: 0px;
+    padding: 0px;
     box-sizing: border-box;
     font-family: 'Raleway', sans-serif;
-}
-
-
-.center {
-    background-color: white;
-    height: 100%;
-    width: 65%;
-
-}
-
-.icon {
-    cursor: pointer;
-    transition: .3s linear;
-}
-
-.icon:hover {
-    color: orange;
 }

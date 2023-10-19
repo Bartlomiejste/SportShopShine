@@ -2,7 +2,13 @@
 
 return [
     'menu' => [
-        'language' => 'Zunge',
+        'language' => 'Sprache',
+        'shoes' => 'Schuhe',
+        'clothes' => 'Kleidung',
+        'accessories' => "Zubehör",
+        'balls' => 'Ballsö',
+        'search' => 'Suchen',
+        
         'categories' => [
             'Electronic' => 'Electronic',
     ],

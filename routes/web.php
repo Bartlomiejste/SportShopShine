@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\LangController;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -21,6 +22,5 @@ Route::get('/', function () {
 
 
 Route::get('language/{lang}', [LangController::class, 'switchLang'])->name('language.switch');
-// Route::group(['middleware' => 'setlang'], function(){
-//     Route::get('lang/{lang}', 'LangController@switchLang')->name('lang.switch');
-// });
+
+Auth::routes();

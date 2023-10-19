@@ -3,6 +3,11 @@
 return [
     'menu' => [
         'language' => 'Language',
+        'shoes' => 'Shoes',
+        'clothes' => 'Clothes',
+        'accessories' => "Accessories",
+        'balls' => 'Balls',
+        'search' => 'Search',
         'categories' => [
             'Electronic' => 'Electronic',
     ],
