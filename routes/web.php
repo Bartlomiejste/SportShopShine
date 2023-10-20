@@ -24,4 +24,6 @@ Route::get('/home', [HomeController::class, 'index'])->name('home');
 
 Auth::routes();
 
+Route::get('/cart', [CartController::class, 'index'])->name('cart');
+
 Route::get('language/{lang}', [LangController::class, 'switchLang'])->name('language.switch');

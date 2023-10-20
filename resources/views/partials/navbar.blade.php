@@ -20,7 +20,7 @@
 
 
         <div class="dropdown d-flex">
-            <button class="btn dropdown-toggle" type="button" id="languageDropdown" data-bs-toggle="dropdown"
+            <button class="btn dropdown-toggle ms-2" type="button" id="languageDropdown" data-bs-toggle="dropdown"
                 aria-expanded="false">
                 <span class="p-2 fs-6">{{ __('menu.menu.language') }}: </span>
                 <img src="{{ asset('./assets/' . Session::get('lang', 'pl') . '.png') }}"

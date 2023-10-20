@@ -3,6 +3,7 @@
 
     <div class="d-flex align-items-center justify-content-end p-3">
 
+
         @if (!auth()->check())
             <!-- Przycisk logowania -->
             <a href="{{ route('login') }}" class="btn btn-light me-2">{{ __('Login') }}</a>
@@ -17,26 +18,38 @@
                 aria-expanded="false">
                 <i class="bi bi-cart3"></i> {{ __('menu.menu.cart') }} (<span id="cartItemsCount">0</span>)
             </button>
+
             <div class="dropdown-menu dropdown-menu-end p-2" aria-labelledby="cartDropdown">
                 <!-- Lista produktów w koszyku -->
                 <!-- Na razie zostawię to puste, ale można dodać tutaj elementy koszyka -->
 
                 <!-- Suma wartości produktów w koszyku -->
-                <div class="d-flex justify-content-between">
+                <div class="d-flex justify-content-between mt-2">
                     <strong>{{ __('Total') }}:</strong>
                     <span id="cartTotalValue">0.00 PLN</span>
                 </div>
-                <button class="btn btn-light m-1 p-1 text-center w-100">{{ __('menu.menu.show cart') }}</button>
+                <button class="btn btn-light mt-4 text-center w-100">{{ __('menu.menu.show cart') }}</button>
             </div>
         </div>
 
         @if (auth()->check())
-            <!-- Przycisk wylogowywania -->
-            <button href="{{ route('logout') }}" class="btn btn-light m-2"
-                onclick="event.preventDefault();
+            <!-- Przycisk użytkownika -->
+
+            <div class="dropdown d-flex">
+                <button class="btn dropdown-toggle ms-2" type="button" id="languageDropdown" data-bs-toggle="dropdown"
+                    aria-expanded="false">
+                    <span class="p-2 fs-6"> {{ Auth::user()->name }}</span>
+                </button>
+
+                <div class="dropdown-menu dropdown-menu-end p-2 text-center" aria-labelledby="navbarDropdown">
+                    <button href="{{ route('logout') }}" class="btn btn-light m-2"
+                        onclick="event.preventDefault();
                 document.getElementById('logout-form').submit();">
-                {{ __('Logout') }}
-            </button>
+                        {{ __('Logout') }}
+                    </button>
+                </div>
+            </div>
         @endif
+
     </div>
 </div>

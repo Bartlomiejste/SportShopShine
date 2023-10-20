@@ -9,24 +9,26 @@
                 style="width:250px; position:absolute; top:-90px; z-index:1; left:270px" alt="logo" title="Logo">
         </a>
         <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0 ">
-                <li class="nav-item">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item ms-3">
                     <a class="nav-link" href="#">{{ __('menu.menu.shoes') }}</a>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item ms-3">
                     <a class="nav-link" href="#">{{ __('menu.menu.clothes') }}</a>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item ms-3">
                     <a class="nav-link" href="#">{{ __('menu.menu.accessories') }}</a>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item ms-3">
                     <a class="nav-link" href="#">{{ __('menu.menu.balls') }}</a>
                 </li>
             </ul>
             <form class="d-flex">
                 <input class="form-control me-2 w-100" type="search"
                     placeholder="{{ __('menu.menu.search') }} ... "aria-label="Search">
-                <button class="btn btn-light" type="submit"><i class="bi bi-search"></i></button>
+                <button class="btn btn-light" type="submit" onclick="event.preventDefault()"><i
+                        class="bi
+                    bi-search"></i></button>
             </form>
         </div>
 </nav>
