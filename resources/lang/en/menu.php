@@ -8,6 +8,8 @@ return [
         'accessories' => "Accessories",
         'balls' => 'Balls',
         'search' => 'Search',
+        'cart' => 'Cart',
+        'show cart' => "Show cart",
         'categories' => [
             'Electronic' => 'Electronic',
     ],

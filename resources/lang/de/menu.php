@@ -7,8 +7,9 @@ return [
         'clothes' => 'Kleidung',
         'accessories' => "Zubehör",
         'balls' => 'Ballsö',
+        'cart' =>'Korb',
         'search' => 'Suchen',
-        
+        'show cart' => 'Warenkorb anzeigen',
         'categories' => [
             'Electronic' => 'Electronic',
     ],

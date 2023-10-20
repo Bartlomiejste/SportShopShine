@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LangController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -19,8 +20,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-
-
-Route::get('language/{lang}', [LangController::class, 'switchLang'])->name('language.switch');
+Route::get('/home', [HomeController::class, 'index'])->name('home');
 
 Auth::routes();
+
+Route::get('language/{lang}', [LangController::class, 'switchLang'])->name('language.switch');

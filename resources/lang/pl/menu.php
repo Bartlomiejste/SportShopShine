@@ -8,6 +8,8 @@ return [
         'accessories' => "Akcesoria",
         'balls' => 'Piłki',
         'search' => 'Wyszukaj',
+        'cart' => 'Koszyk',
+        'show cart' => 'Zobacz koszyk',
         'categories' => [
             'Electronic' => 'Elektronika',  
     ],
