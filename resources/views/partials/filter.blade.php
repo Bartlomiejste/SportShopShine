@@ -11,16 +11,16 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item ms-3">
-                    <a class="nav-link" href="#">{{ __('menu.menu.shoes') }}</a>
+                    <a class="nav-link text-white" href="#">{{ __('menu.menu.shoes') }}</a>
                 </li>
                 <li class="nav-item ms-3">
-                    <a class="nav-link" href="#">{{ __('menu.menu.clothes') }}</a>
+                    <a class="nav-link text-white" href="#">{{ __('menu.menu.clothes') }}</a>
                 </li>
                 <li class="nav-item ms-3">
-                    <a class="nav-link" href="#">{{ __('menu.menu.accessories') }}</a>
+                    <a class="nav-link text-white" href="#">{{ __('menu.menu.accessories') }}</a>
                 </li>
                 <li class="nav-item ms-3">
-                    <a class="nav-link" href="#">{{ __('menu.menu.balls') }}</a>
+                    <a class="nav-link text-white" href="#">{{ __('menu.menu.balls') }}</a>
                 </li>
             </ul>
             <form class="d-flex">
@@ -29,6 +29,9 @@
                 <button class="btn btn-light" type="submit" onclick="event.preventDefault()"><i
                         class="bi
                     bi-search"></i></button>
+            </form>
+            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                {{ csrf_field() }}
             </form>
         </div>
 </nav>

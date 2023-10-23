@@ -22,6 +22,9 @@ Route::get('/', function () {
 
 Route::get('/home', [HomeController::class, 'index'])->name('home');
 
+Route::post('/logout', 'Auth\LoginController@logout')->name('logout');
+
+
 Auth::routes();
 
 Route::get('/cart', [CartController::class, 'index'])->name('cart');

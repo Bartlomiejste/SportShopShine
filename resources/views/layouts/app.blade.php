@@ -8,7 +8,7 @@
     <div class="main-container">
         <div class="container mx-auto center">
 
-            @include('partials.navbar')
+            @include('partials.info&language')
             @include('partials.cart')
             @include('partials.filter')
 
