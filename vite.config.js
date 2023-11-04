@@ -11,6 +11,7 @@ export default defineConfig({
                 "resources/sass/app.scss",
                 "resources/css/background.css",
                 "public/js/menu.js",
+                "resources/sass/_variables.scss",
             ],
             refresh: true,
         }),

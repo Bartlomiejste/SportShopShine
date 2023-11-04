@@ -2,16 +2,16 @@
 
 
 @section('content')
-    <div style="margin-top:56px;">
-        <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+    <div style="margin:56px -15px 0px -15px;">
+        <div id="carouselExampleAutoplaying" class="carousel" data-bs-ride="carousel">
             <div class="carousel-inner">
-                <div class="carousel-item active">
+                <div class="carousel-item active" data-bs-interval="3000">
                     <img src="/assets/advertisement/boots.jpg" class="d-block w-100" alt="boots">
                 </div>
-                <div class="carousel-item">
+                <div class="carousel-item" data-bs-interval="3000">
                     <img src="/assets/advertisement/boots1.jpg" class="d-block w-100" alt="boots1">
                 </div>
-                <div class="carousel-item">
+                <div class="carousel-item" data-bs-interval="3000">
                     <img src="/assets/advertisement/boots3.jpg" class="d-block w-100" alt="boots3">
                 </div>
             </div>
