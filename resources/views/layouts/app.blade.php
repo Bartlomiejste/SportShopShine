@@ -25,6 +25,7 @@
     </script>
 
     @yield('js-files')
+ 
 
 </body>
 

@@ -2,6 +2,8 @@
 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- CSRF Token -->
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <link rel="icon" type="image/x-icon" href="./assets/soccer-ball.png">
 
     <title>{{ config('app.name', 'SportShopShine.pl - piłkarski sklep internetowy') }}</title>
@@ -20,7 +22,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Styles -->
-    @vite(['resources/css/app.css', 'resources/sass/app.scss', 'resources/css/background.css', 'resources/css/menu.css', 'resources/sass/_variables.scss'])
+    @vite(['resources/css/app.css', 'resources/js/delete.js', 'resources/sass/app.scss', 'resources/css/background.css', 'resources/css/menu.css', 'resources/sass/_variables.scss'])
 
     <!-- jquery  -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
@@ -29,5 +31,7 @@
 
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
+    <!-- sweetalert2 -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 </head>

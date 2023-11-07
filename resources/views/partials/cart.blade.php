@@ -41,12 +41,19 @@
                     <span class="p-2 fs-6"> {{ Auth::user()->name }}</span>
                 </button>
 
-                <div class="dropdown-menu dropdown-menu-end p-2 text-center" aria-labelledby="navbarDropdown">
-                    <button href="{{ route('logout') }}" class="btn btn-light m-2"
+                <div class="dropdown-menu dropdown-menu-start p-2 text-center" aria-labelledby="navbarDropdown">
+                    <a href="{{ route('users.index') }}" class="btn btn-light d-flex align-items-center m-2">
+                        <i class="bi bi-person-circle me-2"></i>
+                        {{ __('Account') }}
+                    </a>
+
+                    <a href="{{ route('logout') }}" class="btn btn-light d-flex align-items-center m-2"
                         onclick="event.preventDefault();
-                document.getElementById('logout-form').submit();">
+                        document.getElementById('logout-form').submit();">
+                        <i class="bi bi-door-closed-fill me-2"></i>
                         {{ __('Logout') }}
-                    </button>
+                    </a>
+
                 </div>
             </div>
         @endif

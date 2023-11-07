@@ -1,6 +1,7 @@
 {
     "(and :count more error)": "(i jeszcze :count błąd)",
     "(and :count more errors)": "(i jeszcze :count błędów)",
+    "Account": "Konto",
     "A fresh verification link has been sent to your email address.": "Na Twój adres e-mail został wysłany nowy link weryfikacyjny.",
     "All rights reserved.": "Wszelkie prawa zastrzeżone.",
     "Before proceeding, please check your email for a verification link.": "Zanim przejdziesz dalej, sprawdź swoją wiadomość e-mail, gdzie znajdziesz link weryfikacyjny.",

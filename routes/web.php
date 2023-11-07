@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LangController;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -20,12 +21,31 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+
+
+// Route::resource('users', UserController::class)->only([
+//             'index','edit','update','destroy'
+//         ]);
+
+// Index route
+Route::get('users', [UserController::class, 'index'])->name('users.index');
+
+// Edit route
+Route::get('users/{user}/edit', [UserController::class, 'edit'])->name('users.edit');
+
+// Update route
+Route::put('users/{user}', [UserController::class, 'update'])->name('users.update');
+
+// Destroy route
+Route::delete('users/{user}', [UserController::class, 'destroy'])->name('users.destroy');
+
+        
 Route::get('/home', [HomeController::class, 'index'])->name('home');
 
 Route::post('/logout', 'Auth\LoginController@logout')->name('logout');
 
 
-Auth::routes();
+Auth::routes(['verify' => true]);
 
 Route::get('/cart', [CartController::class, 'index'])->name('cart');
 
