@@ -2,18 +2,19 @@
 
 @section('content')
     <div class="container">
-        <div class="row justify-content-center">
+        <div class="row justify-content-center" style="margin-top: 150px;">
             <div class="col-md-8">
                 <div class="card">
-                    <div class="card-header">Edycja użytkownika: {{ $user->email }}</div>
+                    <div class="card-header">{{ __('user.user.user_data') }}: <strong>{{ $user->email }}</strong></div>
 
                     <div class="card-body">
-                        <form method="POST" action="{{ route('users.update', $user->id) }}">
+                        <form method="POST" id='userEdit' action="{{ route('users.update', $user->id) }}">
                             {{ method_field('PUT') }}
                             @csrf
 
                             <div class="form-group row">
-                                <label for="city" class="col-md-4 col-form-label text-md-right">Miasto</label>
+                                <label for="city"
+                                    class="col-md-4 col-form-label text-md-right">{{ __('user.user.city') }}</label>
 
                                 <div class="col-md-6">
                                     <input id="city" type="text" maxlength="255"
@@ -29,7 +30,8 @@
                             </div>
 
                             <div class="form-group row">
-                                <label for="zip_code" class="col-md-4 col-form-label text-md-right">Kod pocztowy</label>
+                                <label for="zip_code"
+                                    class="col-md-4 col-form-label text-md-right">{{ __('user.user.zip_code') }}</label>
 
                                 <div class="col-md-6">
                                     <input id="zip_code" type="text" maxlength="6"
@@ -46,7 +48,8 @@
                             </div>
 
                             <div class="form-group row">
-                                <label for="street" class="col-md-4 col-form-label text-md-right">Ulica</label>
+                                <label for="street"
+                                    class="col-md-4 col-form-label text-md-right">{{ __('user.user.street') }}</label>
 
                                 <div class="col-md-6">
                                     <input id="street" type="text" maxlength="255"
@@ -62,24 +65,8 @@
                             </div>
 
                             <div class="form-group row">
-                                <label for="street_no" class="col-md-4 col-form-label text-md-right">Numer ulicy</label>
-
-                                <div class="col-md-6">
-                                    <input id="street_no" type="text" maxlength="5"
-                                        class="form-control @error('street_no') is-invalid @enderror"
-                                        name="address[street_no]" value="{{ $user?->address?->street_no }}" required
-                                        autocomplete="street_no" autofocus>
-
-                                    @error('street_no')
-                                        <span class="invalid-feedback" role="alert">
-                                            <strong>{{ $message }}</strong>
-                                        </span>
-                                    @enderror
-                                </div>
-                            </div>
-
-                            <div class="form-group row">
-                                <label for="home_no" class="col-md-4 col-form-label text-md-right">Numer domu</label>
+                                <label for="home_no"
+                                    class="col-md-4 col-form-label text-md-right">{{ __('user.user.home_number') }}</label>
 
                                 <div class="col-md-6">
                                     <input id="home_no" type="text" maxlength="5"
@@ -94,10 +81,28 @@
                                 </div>
                             </div>
 
+                            <div class="form-group row">
+                                <label for="phone_no"
+                                    class="col-md-4 col-form-label text-md-right">{{ __('user.user.phone_number') }}</label>
+
+                                <div class="col-md-6">
+                                    <input id="phone_no" type="text" maxlength="15"
+                                        class="form-control @error('phone_no') is-invalid @enderror"
+                                        name="address[phone_no]" value="{{ $user?->address?->phone_no }}" required
+                                        autocomplete="phone_no" autofocus>
+
+                                    @error('phone_no')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror
+                                </div>
+                            </div>
+
                             <div class="form-group row mb-0 float-right">
                                 <div class="col-md-6">
-                                    <button type="submit" class="btn btn-primary">
-                                        {{ __('shop.button.save') }}
+                                    <button type="submit" class="btn btn-primary" style="width:150px;">
+                                        {{ __('user.user.save_data') }}
                                     </button>
                                 </div>
                             </div>
@@ -107,4 +112,16 @@
             </div>
         </div>
     </div>
+@endsection
+
+@section('javascript')
+    const title = "{{ __('sweetalert.sweetalert.confirmUserData.title') }}"
+    const text = "{{ __('sweetalert.sweetalert.confirmUserData.text') }}"
+    const confirmButtonText = "{{ __('sweetalert.sweetalert.confirmUserData.confirmButtonText') }}"
+    const cancelButtonText = "{{ __('sweetalert.sweetalert.confirmUserData.cancelButtonText') }}"
+@endsection
+
+
+@section('js-files')
+    <script src="{{ asset('js/confirmUserData.js') }}"></script>
 @endsection

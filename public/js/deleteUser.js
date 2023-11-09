@@ -1,13 +1,13 @@
 $(function () {
     $(".delete").on("click", function () {
         Swal.fire({
-            title: confirmDelete,
+            title: title,
             icon: "warning",
             showCancelButton: true,
             confirmButtonColor: "#3085d6",
             cancelButtonColor: "#d33",
-            confirmButtonText: "Tak, usuń to konto!",
-            cancelButtonText: "Anuluj",
+            confirmButtonText: confirmButtonText,
+            cancelButtonText: cancelButtonText,
         }).then((result) => {
             if (result.isConfirmed) {
                 $.ajax({
@@ -20,8 +20,8 @@ $(function () {
                     .done(function (response) {
                         if (response.status === "success") {
                             Swal.fire({
-                                title: "Usunięto!",
-                                text: "Twoje konto zostało usunięte!",
+                                title: titleDone,
+                                text: textDone,
                                 icon: "success",
                                 timer: 2000,
                                 showConfirmButton: false,
@@ -29,19 +29,11 @@ $(function () {
                                 window.location.href = response.redirect;
                             });
                         } else {
-                            Swal.fire(
-                                "Problem z usunięciem rekordu!",
-                                response.message,
-                                "error"
-                            );
+                            Swal.fire(textFail, response.message, "error");
                         }
                     })
                     .fail(function (data) {
-                        Swal.fire(
-                            "Problem z usunięciem konta!",
-                            response.message,
-                            "error"
-                        );
+                        Swal.fire(textFail, response.message, "error");
                     });
             }
         });

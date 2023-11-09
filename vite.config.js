@@ -6,7 +6,7 @@ export default defineConfig({
         laravel({
             input: [
                 "resources/js/app.js",
-                "public/js/delete.js",
+                "public/js/deleteUser.js",
                 "public/js/menu.js",
                 "resources/css/app.css",
                 "resources/css/menu.css",

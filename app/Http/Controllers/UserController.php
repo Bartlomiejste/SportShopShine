@@ -6,7 +6,6 @@ use App\Models\User;
 use Exception;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Session;
 use App\Models\Address;
 use App\Http\Requests\UpdateUserRequest;
 use Illuminate\Http\RedirectResponse;
@@ -70,7 +69,7 @@ class UserController extends Controller
             $address = new Address($addressValidated);
         }
         $user->address()->save($address);
-        return redirect(route('users.index'))->with('status', __('shop.user.status.update.success'));
+        return redirect(route('users.index'))->with('status', __('user.user.messages.update_message_success'));
     }
 
 
@@ -82,7 +81,7 @@ class UserController extends Controller
         if (auth()->id() !== $user->id) {
             return response()->json([
                 'status' => 'error',
-                'message' => 'Nie masz uprawnień do wykonania tej operacji.'
+                'message' => __('user.user.messages.destroy_message_response')
             ], 403);
         }
     
@@ -93,13 +92,13 @@ class UserController extends Controller
     
             return response()->json([
                 'status' => 'success',
-                'message' => __('shop.user.status.delete.success'),
+                'message' => __('user.user.messages.destroy_message_success'),
                 'redirect' => url('/')
             ]);
         } catch (Exception $e) {
             return response()->json([
                 'status' => 'error',
-                'message' => __('shop.user.status.delete.error')
+                'message' => __('user.user.messages.destroy_message_error'),
             ], 500);
         }
     }    

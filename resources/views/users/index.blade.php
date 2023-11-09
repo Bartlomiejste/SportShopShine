@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="container">
-        <table class="table table-hover" style="margin-top: 50px;">
+        <table class="table table-hover" style="margin-top: 150px;">
             <thead>
                 <tr>
                     <th scope="col">#</th>
@@ -22,24 +22,30 @@
                         <td>
                             <a href="{{ route('users.edit', $user->id) }}">
                                 <button class="btn btn-success btn-sm"><i class="bi bi-pencil-fill"></i>
-                                    {{ __('user.user.edit') }}</button>
+                                    {{ __('user.user.data') }}</button>
                             </a>
                             <button class="btn btn-danger btn-sm delete" data-id="{{ $user->id }}">
-                                <i class="bi bi-x-circle-fill"></i> {{ __('user.user.delete account') }}</button>
+                                <i class="bi bi-x-circle-fill"></i> {{ __('user.user.delete_account') }}</button>
                         </td>
                     </tr>
                 @endforeach
             </tbody>
         </table>
-        {{-- {{ $users->links() }} --}}
+
     </div>
 @endsection
 
 @section('javascript')
     const deleteUrl = "{{ url('users') }}/";
-    const confirmDelete = "{{ __('user.user.messages.delete_confirm') }}"
+
+    const title = "{{ __('sweetalert.sweetalert.deleteUser.title') }}"
+    const confirmButtonText = "{{ __('sweetalert.sweetalert.deleteUser.confirmButtonText') }}"
+    const cancelButtonText = "{{ __('sweetalert.sweetalert.deleteUser.cancelButtonText') }}"
+    const titleDone = "{{ __('sweetalert.sweetalert.deleteUser.titleDone') }}"
+    const textDone = "{{ __('sweetalert.sweetalert.deleteUser.textDone') }}"
+    const textFail = "{{ __('sweetalert.sweetalert.deleteUser.textFail') }}"
 @endsection
 
 @section('js-files')
-    <script src="{{ asset('js/delete.js') }}"></script>
+    <script src="{{ asset('js/deleteUser.js') }}"></script>
 @endsection
