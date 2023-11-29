@@ -1,0 +1,36 @@
+.titleproducts {
+    font-size: 20px;
+    text-decoration: underline;
+}
+
+
+.card {
+    position: relative;
+    overflow: hidden;
+}
+
+.card-body::after {
+    content: "Dla zalogowanych użytkowników -15% na cały asortyment";
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    height: calc(100% - 70px);
+    background-color: rgba(0, 123, 255, 0.7);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: top 0.3s ease;
+    pointer-events: none;
+    padding: 20px;
+    text-align: center;
+}
+
+.card:hover .card-body::after {
+    top: 0;
+}
+
+.card:hover img {
+    opacity: 0.1;
+}

@@ -13,3 +13,9 @@
     overflow-y: auto;
     overflow-x: hidden;
 }
+
+
+.container {
+    height: 100%;
+    background-color: white;
+}
