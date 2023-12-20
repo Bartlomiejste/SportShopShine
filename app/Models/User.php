@@ -22,6 +22,7 @@ class User extends Authenticatable
         'name',
         'surname',
         'email',
+        'role',
         'password',
     ];
 
@@ -49,12 +50,21 @@ class User extends Authenticatable
     public function address(): HasOne 
     {
     return $this->hasOne(Address::class);
-    
     }
+
+    // public function orders(): HasMany
+    // {
+    //     return $this->hasMany(Order::class);
+    // }
         
     public function hasAddress(): bool
     {
         return !is_null($this->address);
+    }
+
+    public function hasRole($role): bool
+    {
+        return $this->role === $role;
     }
 
 }

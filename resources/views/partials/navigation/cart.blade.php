@@ -47,12 +47,12 @@
                         {{ __('Account') }}
                     </a>
 
-                    <a href="{{ route('logout') }}" class="btn btn-light d-flex align-items-center m-2"
-                        onclick="event.preventDefault();
-                        document.getElementById('logout-form').submit();">
+                    <button class="btn btn-light d-flex align-items-center m-2"
+                        onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                         <i class="bi bi-door-closed-fill me-2"></i>
                         {{ __('Logout') }}
-                    </a>
+                    </button>
+
 
                 </div>
             </div>

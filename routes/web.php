@@ -26,6 +26,10 @@ Route::get('/', [WelcomeController::class, 'index']);
 //             'index','edit','update','destroy'
 //         ]); ---> ????
 
+Route::middleware(['auth', 'role:admin'])->group(function () {
+    // Tutaj trasy dostępne tylko dla admina
+});
+
 // Index route
 Route::get('users', [UserController::class, 'index'])->name('users.index');
 
@@ -48,6 +52,6 @@ Route::post('/logout', 'Auth\LoginController@logout')->name('logout');
 
 Auth::routes(['verify' => true]);
 
-Route::get('/cart', [CartController::class, 'index'])->name('cart');
+// Route::get('/cart', [CartController::class, 'index'])->name('cart');
 
 Route::get('language/{lang}', [LangController::class, 'switchLang'])->name('language.switch');

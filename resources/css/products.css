@@ -4,12 +4,12 @@
 }
 
 
-.card {
+.carthover {
     position: relative;
     overflow: hidden;
 }
 
-.card-body::after {
+.carthover:not(.user-logged-in) .carthover-body::after {
     content: "Dla zalogowanych użytkowników -15% na cały asortyment";
     position: absolute;
     top: 100%;
@@ -27,10 +27,14 @@
     text-align: center;
 }
 
-.card:hover .card-body::after {
+.carthover:hover .carthover-body::after {
     top: 0;
 }
 
-.card:hover img {
+.carthover:not(.user-logged-in):hover img {
     opacity: 0.1;
+}
+
+.user-logged-in .carthover:hover img {
+    opacity: 1;
 }
