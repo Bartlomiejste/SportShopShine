@@ -4,17 +4,16 @@
         @foreach ($products as $product)
             <div class="col-md-3 d-flex">
                 <div
-                    class="card flex-fill d-flex flex-column align-items-center carthover {{ auth()->check() &&auth()->user()->hasRole('user')? 'user-logged-in': '' }}">
+                    class="p-3 card flex-fill d-flex flex-column align-items-center carthover {{ auth()->check() && auth()->user()->hasRole('user') ? 'user-logged-in' : '' }}">
                     <img src="{{ '/assets/products/' . $product->picture }}" class="card-img-top"
                         alt="{{ $product->name }}" style="max-height: 200px; max-width:200px;">
-                    <div class="carthover-body d-flex flex-column">
+                    <div class="carthover-body d-flex p-3 flex-column">
                         <h5 class="card-title">{{ $product->name }}</h5>
                         <p class="card-text flex-fill" style="height: 4rem; overflow: hidden; font-size:14px;">
                             {{ $product->description }}</p>
                         <div class="mt-auto">
                             <div class="d-flex justify-content-between align-items-center">
-                                @if (auth()->check() &&
-                                        auth()->user()->hasRole('user'))
+                                @if (auth()->check() && auth()->user()->hasRole('user'))
                                     <p class="card-text mb-0">
                                         Cena po zniżce: <span
                                             style="color: red;">{{ $product->price * (1 - $product->sales / 100) }}
